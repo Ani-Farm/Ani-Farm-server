@@ -22,4 +22,4 @@ public abstract class BaseEntity {
     private LocalDateTime updateAt;
 }
 
-//갓태민...
+//갓태민... ㅇㅈ^^
