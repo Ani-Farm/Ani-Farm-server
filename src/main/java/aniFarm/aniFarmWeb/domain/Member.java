@@ -1,7 +1,10 @@
 package aniFarm.aniFarmWeb.domain;
 
 import aniFarm.aniFarmWeb.domain.post.Post;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +12,7 @@ import java.util.List;
 
 @Getter
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member extends BaseEntity{
 
     @Id
@@ -29,4 +33,12 @@ public class Member extends BaseEntity{
 
     @OneToMany(mappedBy = "member")
     List<Post> posts = new ArrayList<>();
+
+    @Builder
+    public Member(String loginId, String password, String nickName) {
+        this.loginId = loginId;
+        this.password = password;
+        this.nickName = nickName;
+        this.authority = Authority.ROLE_USER;
+    }
 }

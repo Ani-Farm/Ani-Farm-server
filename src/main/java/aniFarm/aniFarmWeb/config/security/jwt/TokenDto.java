@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class TokenDto {
 
-    private String accessToken;
+    private String accessToken; // 접근 토큰
 
     private String refreshToken;
 
