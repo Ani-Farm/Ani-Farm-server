@@ -6,8 +6,8 @@ import lombok.Getter;
 public enum ErrorCode {
 
     // auth
-    FAIL_LOGIN(1001, "로그인에 실패하였습니다"),
     FAIL_REFRESH(1002, "다시 로그인을 해주세요"), //재발급시, 쿠키에 토큰 null 이면
+    DUPLICATE_LOGINID(1003,"중복된 아이디입니다"),
 
 
     // member
